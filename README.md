@@ -17,6 +17,7 @@ Answers:
       1. Change so that the date representation is universal. E.g. YYYY/MM/DD or similar. No localized text in those textboxes, the same regardless of language. If I want to have a readable text, I could add that in a different place, like on top.
       1. If the above isn't acceptable, it would be easier if the textbox accepted the input as a locale string (e.g. '10 June 2025' or '10 de junho de 2025') generated directly from the user's web browser settings.
     - The URL to the ticket buying site. Having a uniform way to access the site (either `/<lang>/buy-tickets` or `/<lang>/comprar-bilhetes`) reduces the number of endpoints to keep track of. In fact, that is what the next step (selecting the tickets) does
+    - It would be nice if we stayed on the same orig
 
 <details>
 <summary>Expand to see the task</summary>
