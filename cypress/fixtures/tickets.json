@@ -1,0 +1,14 @@
+{
+  "locale": "en-GB",
+  "ticketUrl": {
+    "en-GB": "/en/buy-tickets",
+    "pt-PT": "/pt/comprar-bilhetes"
+  },
+  "ticketSelectionUrl": "https://venda.cp.pt",
+  "ticketSelectionUrlSubstring": "/bilheteira/comprar",
+  "maxMonthsInFutureAllowed": 2,
+  "outboundDaysFromNow": 3,
+  "departStation": "Lagos",
+  "returnDateDaysFromNow": 5,
+  "destinationStation": "Porto Campanha"
+}
