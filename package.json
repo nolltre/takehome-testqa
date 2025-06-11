@@ -1,0 +1,24 @@
+{
+  "name": "takehome-testqa",
+  "version": "1.0.0",
+  "description": "Takehome assignment for the Automation role at Datavant",
+  "homepage": "https://github.com/nolltre/takehome-testqa#readme",
+  "bugs": {
+    "url": "https://github.com/nolltre/takehome-testqa/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolltre/takehome-testqa.git"
+  },
+  "license": "MIT",
+  "author": "Daniel Karmark",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "open": "npx cypress open",
+    "test": "npx cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^14.4.1"
+  }
+}
