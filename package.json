@@ -15,7 +15,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "open": "npx cypress open",
+    "test": "npx cypress run"
   },
   "devDependencies": {
     "cypress": "^14.4.1"

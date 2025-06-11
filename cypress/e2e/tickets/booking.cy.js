@@ -58,13 +58,16 @@ describe('Ticket buying tests', () => {
   beforeEach(() => {
     cy.fixture('tickets').as('tickets')
     cy.get('@tickets').then((tickets) => {
+      // This is flaky. The server sometimes responds with something other than a `text/html` content which cause
+      // the tests to fail
+      // TODO: Can we loop here to retry the connection? 
       cy.visit(tickets.ticketUrl[tickets.locale])
     })
   })
 
   it('Ticket selection abort', () => {
     cy.get('@tickets').then((tickets) => {
-      // Convenience function to check value
+      // Convenience function to check value, can be broken out if more tests are added
       let isValueEqual = (alias, equalsString) => {
         cy.get(alias).invoke('val').should('be.equal',
           equalsString)
@@ -76,10 +79,10 @@ describe('Ticket buying tests', () => {
       let returnDateString = addToDate(tickets.returnDateDaysFromNow, tickets.locale)
 
       // Alias the fields we are working with
-      cy.get('[name="returnDate"]').as('returnDate')
-      cy.get('[name="departDate"]').as('departDate')
       cy.get('[name="textBoxPartida"]').as('textBoxDeparture')
       cy.get('[name="textBoxChegada"]').as('textBoxReturn')
+      cy.get('[name="returnDate"]').as('returnDate')
+      cy.get('[name="departDate"]').as('departDate')
 
 
       // Wait for the elements to show
@@ -87,7 +90,8 @@ describe('Ticket buying tests', () => {
       // you don't get a "reverse" trip, where the inbound journey date happens
       // *before* the outbound one
       cy.get('#searchTimetableForm').within(() => {
-        // This is inside the form selected
+        // This is inside the select journey form
+
         // FIXME: Fill in the return date first, seems to be a bug on the page
         // so that if you don't do this, the return date won't take.
         cy.get('@returnDate').clear().type(returnDateString)
